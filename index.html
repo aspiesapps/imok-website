@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm OK - Veiligheid voor Senioren</title>
+    <title>Privacybeleid - I'm OK App</title>
     <style>
-        :root { --blue: #0496FF; --light: #DCF0FB; }
-        body { font-family: sans-serif; color: #333; margin: 0; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        :root { --blue: #0496FF; --light: #DCF0FB; --dark: #1A1A1A; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--dark); margin: 0; line-height: 1.6; background-color: #fdfdfd; }
+        .container { max-width: 850px; margin: 0 auto; padding: 20px; }
         header { background: var(--light); text-align: center; padding: 40px 20px; border-bottom: 4px solid var(--blue); }
-        .logo { width: 100px; border-radius: 20%; margin-bottom: 10px; }
-        .feature { display: flex; align-items: center; gap: 20px; margin: 40px 0; border-bottom: 1px solid #eee; padding-bottom: 40px; }
-        .feature img { width: 250px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .privacy-box { background: #f4f4f4; padding: 25px; border-radius: 15px; border-left: 5px solid var(--blue); }
-        @media (max-width: 600px) { .feature { flex-direction: column; text-align: center; } }
+        .logo { width: 80px; border-radius: 20%; margin-bottom: 10px; }
+        .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .screenshot-grid img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .policy-content { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); margin-top: -30px; position: relative; }
+        h1, h2 { color: var(--blue); }
+        .footer { text-align: center; padding: 40px; color: #888; font-size: 0.9em; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 30px 0; }
     </style>
 </head>
 <body>
@@ -25,34 +27,48 @@
 </header>
 
 <div class="container">
-    <div class="feature">
-        <div>
-            <h2>1. Dagelijkse Check-in</h2>
-            <p>De app herinnert u eraan om te bevestigen dat alles goed gaat. Eén simpele druk op de knop is genoeg.</p>
-        </div>
-        <img src="1.jpg" alt="Check-in scherm">
-    </div>
+    <div class="policy-content">
+        <h2>Privacy Policy for I'm OK</h2>
+        <p><em>Last Updated: 01/13/2026</em></p>
+        <p>This privacy policy governs your use of the software application "I'm OK" for mobile devices that was created by Aspie’s Apps. The Application is designed with user privacy as a primary concern.</p>
 
-    <div class="feature">
-        <img src="7.jpg" alt="SMS Preview">
-        <div>
-            <h2>2. Automatisch Alarm</h2>
-            <p>Mist u een check-in? De app verstuurt automatisch een vooraf ingesteld SMS-bericht naar uw naasten, inclusief uw status.</p>
-        </div>
-    </div>
+        <hr>
 
-    <section class="privacy-box">
-        <h2>Privacybeleid & Permissies</h2>
-        <p><strong>SMS (SEND_SMS):</strong> Gebruikt om noodberichten te versturen als de check-in wordt gemist.</p>
-        <p><strong>Contacten:</strong> Wordt enkel gebruikt om uw noodcontacten te selecteren uit uw adresboek.</p>
-        <p><strong>Batterij:</strong> De app vraagt toestemming om batterij-optimalisatie te negeren, zodat de <code>AlarmManager</code> altijd betrouwbaar werkt, ook in stand-by.</p>
-        <p><em>Wij verzamelen geen data buiten uw toestel.</em></p>
-    </section>
+        <h3>App Functionaliteit in Beeld</h3>
+        <div class="screenshot-grid">
+            <img src="1.jpg" alt="Hoofdscherm">
+            <img src="3.jpg" alt="Instellingen">
+            <img src="7.jpg" alt="SMS Voorbeeld">
+        </div>
+
+        <hr>
+
+        <h3>Contact Information (READ_CONTACTS permission)</h3>
+        <p>The Application requests permission to read your contacts. This permission is used only when you, the user, actively choose to select a contact from your address book to set up an emergency action (SMS or Email). The selected phone number or email address is then stored securely and locally on your device's private storage.</p>
+        <p><strong>This information is never transmitted, shared, or uploaded to any server.</strong> It is only used by the Application on your device to send the configured emergency messages.</p>
+
+        <h3>SMS Permission (SEND_SMS)</h3>
+        <p>The Application uses the SEND_SMS permission to autonomously send an emergency alert to your pre-defined contacts if a daily check-in is missed. This is the core safety feature of the app and functions entirely locally.</p>
+
+        <h3>In-App Donations</h3>
+        <p>The Application offers the ability to make voluntary donations through the Google Play Store's billing system. All financial transactions are handled securely by Google. We do not receive, process, or store any of your personal payment information.</p>
+
+        <h3>Anonymous Usage Data</h3>
+        <p>We do not collect any personal or anonymous usage data. All app functionality and user data remain on your device.</p>
+
+        <h3>Battery Optimization</h3>
+        <p>To ensure the reliability of the safety check, the app may request to ignore battery optimizations. This allows the <code>AlarmManager</code> to trigger notifications even when the device is in standby mode.</p>
+
+        <hr>
+
+        <h3>Contact us</h3>
+        <p>If you have any questions regarding privacy while using the Application, please contact us via email at <strong>aspies.apps@gmail.com</strong>.</p>
+    </div>
 </div>
 
-<footer style="text-align:center; padding: 40px; color: #888;">
-    &copy; 2026 imok.be | support@imok.be
-</footer>
+<div class="footer">
+    &copy; 2026 imok.be | Aspie's Apps
+</div>
 
 </body>
 </html>
