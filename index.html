@@ -9,7 +9,12 @@
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--dark); margin: 0; line-height: 1.7; background-color: #f5f7fa; }
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
         
-        header { background: var(--light); text-align: center; padding: 60px 20px; border-bottom: 2px solid rgba(4,150,255,0.1); }
+        header { background: var(--light); text-align: center; padding: 60px 20px; border-bottom: 2px solid rgba(4,150,255,0.1); position: relative; }
+        
+        /* De nieuwe Donate knop in de stijl van de app */
+        .donate-btn { position: absolute; top: 20px; right: 20px; background: var(--white); color: var(--blue); padding: 8px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border: 1px solid rgba(4,150,255,0.1); }
+        .donate-btn:hover { background: #fdfdfd; transform: translateY(-1px); }
+
         .logo { width: 100px; border-radius: 22%; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         h1 { color: var(--blue); margin: 0; font-size: 2.5em; text-shadow: 1px 1px 0px white; }
         .tagline { font-size: 1.2em; color: #556b82; margin-top: 10px; font-weight: 500; }
@@ -37,6 +42,8 @@
 <body>
 
 <header>
+    <a href="https://www.buymeacoffee.com/aspies.apps" target="_blank" class="donate-btn">Donate</a>
+    
     <img src="ic_launcher.png" alt="I'm OK Logo" class="logo">
     <h1>I'm OK</h1>
     <p class="tagline">Een autonoom vangnet voor u en uw huisdieren.</p>
