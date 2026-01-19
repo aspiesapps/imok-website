@@ -19,17 +19,11 @@
         .play-button:hover { transform: scale(1.05); }
         .coming-soon { font-style: italic; color: #888; margin-top: 10px; font-size: 0.9em; }
 
-        /* De herstelde Mission Box met jouw verhaal */
-        .mission-box { background: var(--blue); color: white; padding: 35px; border-radius: 15px; margin: 20px 0 40px 0; box-shadow: 0 10px 20px rgba(4,150,255,0.2); border-left: 8px solid #037acc; }
-        .mission-box h2 { color: white; margin-top: 0; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
-        .mission-box p { font-size: 1.1em; }
+        .mission-box { background: var(--blue); color: white; padding: 30px; border-radius: 15px; margin: 40px 0; box-shadow: 0 10px 20px rgba(4,150,255,0.2); }
+        .mission-box h2 { color: white; margin-top: 0; }
 
         .content-section { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
         h2, h3 { color: var(--blue); }
-
-        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
-        .step { text-align: center; padding: 15px; }
-        .step-num { background: var(--blue); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; }
         
         .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
         .screenshot-grid img { width: 100%; border-radius: 10px; border: 1px solid #eee; transition: transform 0.3s; }
@@ -53,68 +47,57 @@
         <a href="#">
             <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="play-button">
         </a>
-        <p class="coming-soon">Binnenkort beschikbaar in de Play Store</p>
+        <p class="coming-soon">Momenteel in de laatste testfase - Binnenkort beschikbaar!</p>
     </section>
 
     <section class="mission-box">
-        <h2>Het verhaal achter I'm OK</h2>
-        <p>Deze app is geboren uit een reële zorg: wat gebeurt er met mijn hond als ik er plotseling niet meer ben? Voor wie alleen woont en weinig sociale contacten heeft, bestaat het risico dat een noodsituatie pas na dagen of weken wordt opgemerkt.</p>
-        <p><strong>I'm OK</strong> is ontwikkeld als een autonoom vangnet. Het vraagt u dagelijks om een simpele bevestiging. Blijft deze uit? Dan zorgt de software ervoor dat uw vooraf gekozen contacten direct een bericht ontvangen. Zo blijft uw trouwe viervoeter nooit ongewild alleen achter.</p>
+        <h2>Het Verhaal achter de App</h2>
+        <p>I'm OK is ontwikkeld vanuit een persoonlijke noodzaak: de zorg voor een trouwe viervoeter. Voor wie alleen woont, is de grootste zorg niet wat er met jezelf gebeurt, maar wat er gebeurt met hen die van je afhankelijk zijn als jij er plots niet meer bent.</p>
+        <p>Deze app zorgt ervoor dat er direct hulp komt wanneer jij niet meer kunt reageren, zodat je huisdier nooit onopgemerkt alleen achterblijft.</p>
     </section>
 
     <section class="content-section">
-        <h2>Hoe het werkt in 3 stappen</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-num">1</div>
-                <strong>Configuratie</strong>
-                <p>Kies een dagelijks tijdstip en selecteer uw noodcontacten.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <strong>Check-in</strong>
-                <p>U ontvangt een melding. Bevestig met één klik dat alles in orde is.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <strong>Activering</strong>
-                <p>Zonder uw reactie verstuurt de app automatisch de ingestelde nood-SMS.</p>
-            </div>
-        </div>
+        <h2>Hoe het werkt</h2>
+        <p>De app werkt volledig autonoom op uw toestel. Er is geen internetverbinding, server of abonnement nodig.</p>
+        <ul>
+            <li><strong>Dagelijkse Check-in:</strong> U ontvangt op een vast tijdstip een melding.</li>
+            <li><strong>Eenvoudige Bevestiging:</strong> Met één druk op de knop laat u weten dat alles in orde is.</li>
+            <li><strong>Het Noodplan:</strong> Reageert u niet binnen de ingestelde tijd? Dan verstuurt de app automatisch een SMS naar uw vooraf ingestelde noodcontacten.</li>
+        </ul>
 
         <div class="screenshot-grid">
-            <img src="1.jpg" alt="Check-in">
+            <img src="1.jpg" alt="Hoofdscherm">
             <img src="3.jpg" alt="Instellingen">
-            <img src="7.jpg" alt="Nood-SMS">
+            <img src="7.jpg" alt="SMS Voorbeeld">
         </div>
     </section>
 
     <section class="content-section" id="privacy">
-        <h2>Privacy & Techniek</h2>
-        <p>Privacy is essentieel. Daarom werkt de app volledig lokaal: <strong>geen datacollectie, geen servers, geen abonnementen.</strong></p>
+        <h2>Privacy & Permissies</h2>
+        <p>Omdat deze app is gebouwd voor maximale betrouwbaarheid en privacy, worden <strong>geen gegevens verzameld of gedeeld</strong>. Alles blijft op uw eigen telefoon.</p>
         
         <div class="permission-badge">SEND_SMS</div>
-        <p>Noodzakelijk voor het versturen van noodberichten zonder afhankelijkheid van internet.</p>
+        <p>Noodzakelijk om het noodplan te activeren zonder tussenkomst van een centrale server.</p>
 
         <div class="permission-badge">READ_CONTACTS</div>
-        <p>Enkel gebruikt om op een gebruiksvriendelijke manier uw contacten te selecteren.</p>
-        
-        <div class="permission-badge">AlarmManager</div>
-        <p>Garandeert een stipt verloop van de meldingen, zelfs als uw telefoon in diepe slaap is.</p>
+        <p>Wordt enkel gebruikt om u gemakkelijk uw noodcontacten te laten selecteren. Gegevens worden alleen lokaal opgeslagen.</p>
+
+        <div class="permission-badge">Batterij-optimalisatie</div>
+        <p>De app vraagt om batterij-optimalisatie te negeren zodat de meldingen altijd stipt kunnen worden verstuurd.</p>
     </section>
 
     <section class="content-section">
-        <h3>Over de ontwikkelaar</h3>
+        <h3>Contact & Transparantie</h3>
         <div class="contact-info">
-            <p><strong>Aspie's Apps</strong></p>
-            <p>Email: aspies.apps@gmail.com</p>
-            <p><em>In overeenstemming met de Play Store richtlijnen zijn de officiële adresgegevens in de winkelvermelding te vinden.</em></p>
+            <p>Ontwikkeld door: <strong>Aspie's Apps</strong></p>
+            <p>Vragen of feedback? Mail naar: <strong>aspies.apps@gmail.com</strong></p>
+            <p><em>In overeenstemming met de Google Play-richtlijnen voor persoonlijke accounts, vindt u mijn officiële adresgegevens in de Google Play Store vermelding.</em></p>
         </div>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 imok.be | Gebouwd voor mens en dier.
+    &copy; 2026 imok.be | Gebouwd met zorg voor mens en dier.
 </footer>
 
 </body>
