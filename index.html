@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'm OK - Veiligheidscheck voor alleenwonenden</title>
     <style>
-        :root { --blue: #0496FF; --light: #F0F8FF; --dark: #2C3E50; --white: #ffffff; }
+        :root { --blue: #0496FF; --light: #DCF0FB; --dark: #2C3E50; --white: #ffffff; }
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--dark); margin: 0; line-height: 1.7; background-color: #f5f7fa; }
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { background: white; text-align: center; padding: 60px 20px; border-bottom: 1px solid #eee; }
+        
+        /* De header is nu lichtblauw in plaats van wit */
+        header { background: var(--light); text-align: center; padding: 60px 20px; border-bottom: 2px solid rgba(4,150,255,0.1); }
+        
         .logo { width: 100px; border-radius: 22%; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1 { color: var(--blue); margin: 0; font-size: 2.5em; }
-        .tagline { font-size: 1.2em; color: #666; margin-top: 10px; }
+        h1 { color: var(--blue); margin: 0; font-size: 2.5em; text-shadow: 1px 1px 0px white; }
+        .tagline { font-size: 1.2em; color: #556b82; margin-top: 10px; font-weight: 500; }
         
         .mission-box { background: var(--blue); color: white; padding: 30px; border-radius: 15px; margin: 40px 0; box-shadow: 0 10px 20px rgba(4,150,255,0.2); }
         .mission-box h2 { color: white; margin-top: 0; }
@@ -27,6 +30,8 @@
         
         footer { text-align: center; padding: 40px; color: #999; font-size: 0.9em; border-top: 1px solid #eee; background: white; }
         .contact-info { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid var(--blue); }
+        
+        code { background: #f0f0f0; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
     </style>
 </head>
 <body>
@@ -62,7 +67,7 @@
 
     <section class="content-section" id="privacy">
         <h2>Privacy & Permissies</h2>
-        <p>Omdat deze app is gebouwd voor maximale betrouwbaarheid en privacy, worden <strong>geen gegevens verzameld of gedeeld</strong>. Alles blijft op uw eigen telefoon.</p>
+        <p>Omdat deze app is gebouwd voor maximale betrouwbaarheid en privacy, worden <strong>geen gegevens verzamelt of gedeeld</strong>. Alles blijft op uw eigen telefoon.</p>
         
         <div class="permission-badge">SEND_SMS</div>
         <p>Noodzakelijk om het noodplan te activeren zonder tussenkomst van een centrale server.</p>
@@ -79,7 +84,7 @@
         <div class="contact-info">
             <p>Ontwikkeld door: <strong>Aspie's Apps</strong></p>
             <p>Vragen of feedback? Mail naar: <strong>aspies.apps@gmail.com</strong></p>
-            <p><em>In overeenstemming met de Google Play-richtlijnen voor persoonlijke accounts, vindt u mijn officiële adresgegevens in de Google Play Store vermelding.</em></p>
+            <p><em>In overeenstemming met de Google Play-richtlijnen voor persoonlijke accounts, vindt u de officiële adresgegevens van de ontwikkelaar in de Google Play Store vermelding.</em></p>
         </div>
     </section>
 </div>
