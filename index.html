@@ -19,13 +19,14 @@
         .play-button:hover { transform: scale(1.05); }
         .coming-soon { font-style: italic; color: #888; margin-top: 10px; font-size: 0.9em; }
 
-        .mission-box { background: var(--blue); color: white; padding: 30px; border-radius: 15px; margin: 20px 0 40px 0; box-shadow: 0 10px 20px rgba(4,150,255,0.2); }
-        .mission-box h2 { color: white; margin-top: 0; }
+        /* De herstelde Mission Box met jouw verhaal */
+        .mission-box { background: var(--blue); color: white; padding: 35px; border-radius: 15px; margin: 20px 0 40px 0; box-shadow: 0 10px 20px rgba(4,150,255,0.2); border-left: 8px solid #037acc; }
+        .mission-box h2 { color: white; margin-top: 0; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
+        .mission-box p { font-size: 1.1em; }
 
         .content-section { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
         h2, h3 { color: var(--blue); }
 
-        /* Handleiding styling */
         .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
         .step { text-align: center; padding: 15px; }
         .step-num { background: var(--blue); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; }
@@ -52,12 +53,13 @@
         <a href="#">
             <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="play-button">
         </a>
-        <p class="coming-soon">Momenteel in de laatste testfase - Binnenkort beschikbaar!</p>
+        <p class="coming-soon">Binnenkort beschikbaar in de Play Store</p>
     </section>
 
     <section class="mission-box">
-        <h2>Waarom I'm OK?</h2>
-        <p>I'm OK is ontwikkeld vanuit een persoonlijke missie: de zorg voor wie niet voor zichzelf kan spreken. Voor wie alleen woont, is deze app een onvermoeibaar vangnet dat pas in actie komt als u dat niet meer kunt.</p>
+        <h2>Het verhaal achter I'm OK</h2>
+        <p>Deze app is geboren uit een reële zorg: wat gebeurt er met mijn hond als ik er plotseling niet meer ben? Voor wie alleen woont en weinig sociale contacten heeft, bestaat het risico dat een noodsituatie pas na dagen of weken wordt opgemerkt.</p>
+        <p><strong>I'm OK</strong> is ontwikkeld als een autonoom vangnet. Het vraagt u dagelijks om een simpele bevestiging. Blijft deze uit? Dan zorgt de software ervoor dat uw vooraf gekozen contacten direct een bericht ontvangen. Zo blijft uw trouwe viervoeter nooit ongewild alleen achter.</p>
     </section>
 
     <section class="content-section">
@@ -65,18 +67,18 @@
         <div class="steps">
             <div class="step">
                 <div class="step-num">1</div>
-                <strong>Stel in</strong>
-                <p>Kies uw dagelijks tijdstip en selecteer uw noodcontacten.</p>
+                <strong>Configuratie</strong>
+                <p>Kies een dagelijks tijdstip en selecteer uw noodcontacten.</p>
             </div>
             <div class="step">
                 <div class="step-num">2</div>
                 <strong>Check-in</strong>
-                <p>Druk dagelijks op de knop om te bevestigen dat alles OK is.</p>
+                <p>U ontvangt een melding. Bevestig met één klik dat alles in orde is.</p>
             </div>
             <div class="step">
                 <div class="step-num">3</div>
-                <strong>Veiligheid</strong>
-                <p>Geen reactie? De app verstuurt automatisch uw nood-SMS.</p>
+                <strong>Activering</strong>
+                <p>Zonder uw reactie verstuurt de app automatisch de ingestelde nood-SMS.</p>
             </div>
         </div>
 
@@ -88,31 +90,31 @@
     </section>
 
     <section class="content-section" id="privacy">
-        <h2>Privacybeleid & Permissies</h2>
-        <p>Wij verzamelen <strong>geen</strong> gegevens. Alle functionaliteit is volledig lokaal op uw toestel.</p>
+        <h2>Privacy & Techniek</h2>
+        <p>Privacy is essentieel. Daarom werkt de app volledig lokaal: <strong>geen datacollectie, geen servers, geen abonnementen.</strong></p>
         
         <div class="permission-badge">SEND_SMS</div>
-        <p>Noodzakelijk voor het versturen van noodberichten zonder tussenkomst van externe servers.</p>
+        <p>Noodzakelijk voor het versturen van noodberichten zonder afhankelijkheid van internet.</p>
 
         <div class="permission-badge">READ_CONTACTS</div>
-        <p>Enkel gebruikt voor het lokaal selecteren van uw noodcontacten.</p>
+        <p>Enkel gebruikt om op een gebruiksvriendelijke manier uw contacten te selecteren.</p>
         
         <div class="permission-badge">AlarmManager</div>
-        <p>Garandeert dat de meldingen stipt aankomen, zelfs in standby-modus.</p>
+        <p>Garandeert een stipt verloop van de meldingen, zelfs als uw telefoon in diepe slaap is.</p>
     </section>
 
     <section class="content-section">
-        <h3>Contact</h3>
+        <h3>Over de ontwikkelaar</h3>
         <div class="contact-info">
             <p><strong>Aspie's Apps</strong></p>
             <p>Email: aspies.apps@gmail.com</p>
-            <p><em>Officiële gegevens zijn beschikbaar via de Google Play Store vermelding.</em></p>
+            <p><em>In overeenstemming met de Play Store richtlijnen zijn de officiële adresgegevens in de winkelvermelding te vinden.</em></p>
         </div>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 imok.be | Gemaakt met zorg voor mens en dier.
+    &copy; 2026 imok.be | Gebouwd voor mens en dier.
 </footer>
 
 </body>
