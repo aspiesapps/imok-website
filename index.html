@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm OK - Veiligheidscheck voor alleenwonenden</title>
+    <title>I'm OK - Het vangnet voor u en uw huisdieren</title>
     <style>
         :root { --blue: #0496FF; --light: #DCF0FB; --dark: #2C3E50; --white: #ffffff; }
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--dark); margin: 0; line-height: 1.7; background-color: #f5f7fa; }
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
         
-        /* De header is nu lichtblauw in plaats van wit */
         header { background: var(--light); text-align: center; padding: 60px 20px; border-bottom: 2px solid rgba(4,150,255,0.1); }
-        
         .logo { width: 100px; border-radius: 22%; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         h1 { color: var(--blue); margin: 0; font-size: 2.5em; text-shadow: 1px 1px 0px white; }
         .tagline { font-size: 1.2em; color: #556b82; margin-top: 10px; font-weight: 500; }
         
-        .mission-box { background: var(--blue); color: white; padding: 30px; border-radius: 15px; margin: 40px 0; box-shadow: 0 10px 20px rgba(4,150,255,0.2); }
+        /* Promotie sectie voor de Play Store */
+        .download-section { text-align: center; padding: 40px 20px; }
+        .play-button { height: 60px; transition: transform 0.2s; cursor: pointer; }
+        .play-button:hover { transform: scale(1.05); }
+        .coming-soon { font-style: italic; color: #888; margin-top: 10px; font-size: 0.9em; }
+
+        .mission-box { background: var(--blue); color: white; padding: 30px; border-radius: 15px; margin: 20px 0 40px 0; box-shadow: 0 10px 20px rgba(4,150,255,0.2); }
         .mission-box h2 { color: white; margin-top: 0; }
 
         .content-section { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
@@ -30,8 +34,6 @@
         
         footer { text-align: center; padding: 40px; color: #999; font-size: 0.9em; border-top: 1px solid #eee; background: white; }
         .contact-info { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid var(--blue); }
-        
-        code { background: #f0f0f0; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
     </style>
 </head>
 <body>
@@ -43,54 +45,57 @@
 </header>
 
 <div class="container">
+    <section class="download-section">
+        <a href="#">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="play-button">
+        </a>
+        <p class="coming-soon">Momenteel in de laatste testfase - Binnenkort beschikbaar!</p>
+    </section>
+
     <section class="mission-box">
-        <h2>Het Verhaal achter de App</h2>
-        <p>I'm OK is niet zomaar een app. Het is ontwikkeld vanuit een persoonlijke noodzaak: de zorg voor een trouwe viervoeter. Voor wie alleen woont, is de grootste zorg niet wat er met jezelf gebeurt, maar wat er gebeurt met hen die van je afhankelijk zijn als jij er plots niet meer bent.</p>
-        <p>Deze app zorgt ervoor dat er direct hulp komt wanneer jij niet meer kunt reageren, zodat je huisdier nooit onopgemerkt alleen achterblijft.</p>
+        <h2>Waarom I'm OK?</h2>
+        <p>I'm OK is ontwikkeld vanuit een persoonlijke missie: de zorg voor een trouwe viervoeter. Voor wie alleen woont, is de grootste zorg vaak wat er met hun huisdieren gebeurt als er henzelf iets overkomt.</p>
+        <p>Deze app dient als een onzichtbaar, maar onvermoeibaar vangnet dat pas in actie komt als u dat niet meer kunt.</p>
     </section>
 
     <section class="content-section">
-        <h2>Hoe het werkt</h2>
-        <p>De app werkt volledig autonoom op uw toestel. Er is geen internetverbinding, server of abonnement nodig.</p>
+        <h2>Eenvoudig & Betrouwbaar</h2>
         <ul>
-            <li><strong>Dagelijkse Check-in:</strong> U ontvangt op een vast tijdstip een melding.</li>
-            <li><strong>Eenvoudige Bevestiging:</strong> Met één druk op de knop laat u weten dat alles in orde is.</li>
-            <li><strong>Noodplan:</strong> Reageert u niet binnen de ingestelde tijd? Dan verstuurt de app automatisch een SMS naar uw vooraf ingestelde noodcontacten.</li>
+            <li><strong>Autonoom:</strong> Geen internet of centrale servers nodig.</li>
+            <li><strong>Privacy:</strong> Uw data en contacten verlaten nooit uw toestel.</li>
+            <li><strong>Zekerheid:</strong> Gebruikt de Android <code>AlarmManager</code> voor maximale punctualiteit.</li>
         </ul>
 
         <div class="screenshot-grid">
-            <img src="1.jpg" alt="Hoofdscherm">
-            <img src="3.jpg" alt="Instellingen">
-            <img src="7.jpg" alt="SMS Voorbeeld">
+            <img src="1.jpg" alt="Check-in scherm">
+            <img src="3.jpg" alt="Configuratie">
+            <img src="7.jpg" alt="SMS waarschuwing">
         </div>
     </section>
 
     <section class="content-section" id="privacy">
-        <h2>Privacy & Permissies</h2>
-        <p>Omdat deze app is gebouwd voor maximale betrouwbaarheid en privacy, worden <strong>geen gegevens verzamelt of gedeeld</strong>. Alles blijft op uw eigen telefoon.</p>
+        <h2>Privacybeleid & Permissies</h2>
+        <p>Wij verzamelen <strong>geen</strong> gegevens. Alle functionaliteit is lokaal.</p>
         
         <div class="permission-badge">SEND_SMS</div>
-        <p>Noodzakelijk om het noodplan te activeren zonder tussenkomst van een centrale server.</p>
+        <p>Wordt uitsluitend gebruikt om noodberichten te versturen als de check-in wordt gemist.</p>
 
         <div class="permission-badge">READ_CONTACTS</div>
-        <p>Wordt enkel gebruikt om u gemakkelijk uw noodcontacten te laten selecteren. Gegevens worden alleen lokaal opgeslagen.</p>
-
-        <div class="permission-badge">Batterij-optimalisatie</div>
-        <p>De app vraagt om batterij-optimalisatie te negeren zodat de <code>AlarmManager</code> de check-in melding altijd stipt kan versturen.</p>
+        <p>Wordt enkel gebruikt om uw eigen noodcontacten te selecteren.</p>
     </section>
 
     <section class="content-section">
-        <h3>Contact & Transparantie</h3>
+        <h3>Over de ontwikkelaar</h3>
         <div class="contact-info">
-            <p>Ontwikkeld door: <strong>Aspie's Apps</strong></p>
-            <p>Vragen of feedback? Mail naar: <strong>aspies.apps@gmail.com</strong></p>
-            <p><em>In overeenstemming met de Google Play-richtlijnen voor persoonlijke accounts, vindt u de officiële adresgegevens van de ontwikkelaar in de Google Play Store vermelding.</em></p>
+            <p><strong>Aspie's Apps</strong></p>
+            <p>Email: aspies.apps@gmail.com</p>
+            <p><em>Officiële adresgegevens zijn beschikbaar via de Google Play Store vermelding.</em></p>
         </div>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 imok.be | Gebouwd met zorg voor mens en dier.
+    &copy; 2026 imok.be | Gemaakt voor gemoedsrust.
 </footer>
 
 </body>
