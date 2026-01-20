@@ -10,7 +10,6 @@
         .container { max-width: 800px; margin: 0 auto; padding: 20px; }
         
         header { background: var(--light); text-align: center; padding: 60px 20px; border-bottom: 2px solid rgba(4,150,255,0.1); position: relative; }
-        
         .donate-btn { position: absolute; top: 20px; right: 20px; background: var(--white); color: var(--blue); padding: 8px 20px; border-radius: 10px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border: 1px solid rgba(4,150,255,0.1); }
         .donate-btn:hover { background: #fdfdfd; transform: translateY(-1px); }
 
@@ -33,6 +32,7 @@
         .screenshot-grid img { width: 100%; border-radius: 10px; border: 1px solid #eee; transition: transform 0.3s; }
 
         .permission-badge { display: inline-block; background: var(--light); color: var(--blue); padding: 5px 12px; border-radius: 20px; font-weight: bold; font-size: 0.85em; margin-bottom: 10px; }
+        .permission-detail { margin-bottom: 30px; padding-left: 10px; border-left: 3px solid var(--light); }
         
         footer { text-align: center; padding: 40px; color: #999; font-size: 0.9em; border-top: 1px solid #eee; background: white; }
         .contact-info { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid var(--blue); }
@@ -61,52 +61,10 @@
         <p>This app ensures that help is summoned immediately when you can no longer respond, so your pet is never left unnoticed and alone.</p>
     </section>
 
-    <section class="content-section">
-        <h2>How it works</h2>
-        <p>The app works fully autonomously on your device. No internet connection, server, or subscription required.</p>
-        <ul>
-            <li><strong>Daily Check-in:</strong> You receive a notification at a preset time.</li>
-            <li><strong>Simple Confirmation:</strong> One tap is all it takes to confirm you're okay.</li>
-            <li><strong>Emergency Plan:</strong> If you don't respond within the time limit, the app automatically sends a text message to your pre-selected emergency contacts.</li>
-        </ul>
-
-        <div class="screenshot-grid">
-            <img src="1.jpg" alt="Main Screen">
-            <img src="3.jpg" alt="Settings">
-            <img src="7.jpg" alt="SMS Example">
-        </div>
-    </section>
-
     <section class="content-section" id="privacy">
         <h2>Privacy & Permissions</h2>
-        <p>Because this app is built for maximum reliability and privacy, <strong>no data is collected or shared</strong>. Everything stays on your phone.</p>
+        <p>This app is built for maximum reliability and privacy. <strong>No data is collected or shared</strong>. Everything stays on your phone.</p>
         
-        <div class="permission-badge">SEND_SMS</div>
-        <p>Required to activate the emergency plan without relying on a central server.</p>
-
-        <div class="permission-badge">READ_CONTACTS</div>
-        <p>Only used to let you easily select your emergency contacts. Data is only stored locally.</p>
-
-        <div class="permission-badge">Battery Optimization</div>
-        <p>The app requests to ignore battery optimization so that notifications are always sent exactly on time.</p>
-
-        <div class="permission-badge">Full-Screen Notifications</div>
-        <p>To ensure critical alerts are never missed, the app uses high-priority notifications that can take over the screen, similar to an alarm clock. This guarantees you see the check-in request immediately, which is vital for the app's safety mission.</p>
-    </section>
-
-    <section class="content-section">
-        <h3>Contact & Transparency</h3>
-        <div class="contact-info">
-            <p>Developed by: <strong>Aspie's Apps</strong></p>
-            <p>Questions or feedback? Email: <strong>aspies.apps@gmail.com</strong></p>
-            <p><em>In accordance with Google Play guidelines for personal accounts, you can find my official address in the Google Play Store listing.</em></p>
-        </div>
-    </section>
-</div>
-
-<footer>
-    &copy; 2026 imok.be | Built with care for humans and animals.
-</footer>
-
-</body>
-</html>
+        <div class="permission-detail">
+            <div class="permission-badge">SEND_SMS</div>
+            <p>This permission is the core of the emergency plan. If you miss a check-in, the app automatically sends SMS messages to your pre-selected contacts directly from your device. We chose SMS because it is independent of an internet connection, ensuring a reliable alert even in
