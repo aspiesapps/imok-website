@@ -55,3 +55,19 @@ window.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'en';
     document.getElementById('language-select').value = savedLang;
 });
+function updatePageLanguage(lang) {
+    const trans = translations[lang] || translations.en;
+    
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (trans[key]) {
+            element.textContent = trans[key];
+        }
+    });
+    
+    // Special handling for footer with HTML entity
+    const footerElement = document.getElementById('footerText');
+    if (footerElement) {
+        footerElement.innerHTML = trans['footerText'];
+    }
+}
