@@ -1,0 +1,136 @@
+/* Kleurenpalet op basis van screenshots */
+:root {
+    --app-bg: #DCF0FB;       /* Lichtblauw uit de screenshots */
+    --app-blue: #0496FF;     /* De hoofdkleur van de knoppen */
+    --white: #FFFFFF;
+    --black: #1A1A1A;
+    --gray: #7F8C8D;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigatie */
+header {
+    background: var(--white);
+    padding: 10px 0;
+    border-bottom: 2px solid var(--app-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo { height: 40px; }
+.logo-text { font-size: 22px; font-weight: 800; color: var(--app-blue); }
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav ul li a { text-decoration: none; color: var(--black); font-weight: 600; }
+nav ul li a:hover { color: var(--app-blue); }
+
+/* Hero */
+.hero {
+    background-color: var(--app-bg);
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.hero .container { display: flex; align-items: center; gap: 40px; }
+.hero-content { flex: 1; }
+.hero-image { flex: 1; text-align: center; }
+
+.badge {
+    background: var(--app-blue);
+    color: white;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 3.2rem; line-height: 1.1; margin-bottom: 20px; }
+.hero p { font-size: 1.3rem; color: #444; margin-bottom: 30px; }
+
+.btn-google-play img { height: 60px; }
+
+/* Screenshots */
+.app-screenshot {
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.main-shot { border: 8px solid var(--black); }
+
+/* Hoe het werkt */
+.how-it-works { padding: 80px 0; text-align: center; }
+.steps { display: flex; gap: 30px; margin-top: 40px; }
+.step { flex: 1; }
+.step-icon { font-size: 50px; margin-bottom: 20px; }
+
+/* Features */
+.features { background: var(--app-bg); padding: 80px 0; }
+.feature-highlight { display: flex; align-items: center; gap: 60px; }
+.feature-text { flex: 1.2; }
+.feature-image { flex: 0.8; }
+
+.check-list { list-style: none; padding: 0; }
+.check-list li { margin-bottom: 15px; position: relative; padding-left: 30px; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--app-blue); font-weight: bold; }
+
+/* SMS Preview Box */
+.sms-preview-section { padding: 80px 0; }
+.preview-box {
+    display: flex;
+    align-items: center;
+    background: #f0f9ff;
+    padding: 40px;
+    border-radius: 30px;
+    gap: 40px;
+}
+.preview-img { width: 250px; border-radius: 15px; }
+
+/* FAQ */
+.faq { padding: 80px 0; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+
+/* Footer */
+footer {
+    background: var(--black);
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+.footer-logo { height: 50px; margin-bottom: 20px; filter: brightness(1.2); }
+footer a { color: var(--app-blue); text-decoration: none; }
+
+/* Mobile */
+@media (max-width: 800px) {
+    .hero .container, .feature-highlight, .preview-box, .steps { flex-direction: column; text-align: center; }
+    h1 { font-size: 2.2rem; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .nav-logo { height: 30px; }
+    nav ul { display: none; }
+}
