@@ -4,198 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'm OK - Personal Safety Net</title>
-    <style>
-        :root {
-            --blue: #0496FF;
-            --bg-body: #f5f7fa;
-            --bg-card: #ffffff;
-            --text-main: #2C3E50;
-            --text-muted: #556b82;
-            --header-bg: #DCF0FB;
-        }
-
-        [data-theme="dark"] {
-            --blue: #0496FF;
-            --bg-body: #000000;
-            --bg-card: #242424;
-            --text-main: #ffffff;
-            --text-muted: #ffffff;
-            --header-bg: #000000;
-        }
-
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            color: var(--text-main); 
-            margin: 0; 
-            line-height: 1.7; 
-            background-color: var(--bg-body);
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .controls {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--bg-card);
-            z-index: 1000;
-            padding: 10px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--blue);
-            font-weight: bold;
-            font-size: 0.9em;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        nav a:hover { background: var(--header-bg); }
-
-        select, .theme-toggle {
-            padding: 5px 10px;
-            border-radius: 8px;
-            border: 1px solid var(--blue);
-            background: var(--bg-card);
-            color: var(--text-main);
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        header { 
-            background: var(--header-bg); 
-            text-align: center; 
-            padding: 120px 20px 80px; 
-            border-bottom: 2px solid var(--border-color);
-            position: relative;
-        }
-
-        .donate-btn-top {
-            position: absolute;
-            top: 80px;
-            right: 20px;
-            background: var(--bg-card);
-            color: var(--blue);
-            padding: 8px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border: 1px solid var(--blue);
-        }
-
-        .container { max-width: 850px; margin: 0 auto; padding: 20px; }
-        
-        .content-section { 
-            background: var(--bg-card); 
-            padding: 40px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            margin-bottom: 40px; 
-            scroll-margin-top: 80px;
-        }
-
-        .logo { width: 110px; border-radius: 25px; margin-bottom: 0px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        h1, h2, h3 { color: var(--blue); }
-        
-        .mission-box { 
-            background: var(--blue); 
-            color: white; 
-            padding: 35px; 
-            border-radius: 20px; 
-            margin: 40px 0; 
-            box-shadow: 0 10px 25px rgba(4,150,255,0.3);
-        }
-        .mission-box h2 { color: white; margin-top: 0; }
-
-        .download-section { text-align: center; padding: 20px 0; }
-        .play-button { height: 60px; }
-
-        .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
-        .screenshot-grid img { width: 100%; border-radius: 10px; border: 1px solid #eee; }
-
-        .permission-badge { display: inline-block; background: var(--header-bg); color: var(--blue); padding: 5px 12px; border-radius: 20px; font-weight: bold; margin-bottom: 10px; }
-        
-        .contact-info { background: var(--bg-body); padding: 20px; border-radius: 10px; border-left: 5px solid var(--blue); }
-
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: none;
-            background: var(--blue);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        footer { text-align: center; padding: 60px; color: var(--text-muted); border-top: 1px solid var(--border-color); }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="languages.js"></script>
 </head>
 <body>
 
 <div class="controls">
     <nav>
-        <a href="#why">Why this app?</a>
-        <a href="#how">How to use?</a>
-        <a href="#privacy">Privacy & Permissions.</a>
-        <a href="#contact">Contact & Requests.</a>
-    </nav>
-    <select onchange="console.log('Language changed to: ' + this.value)">
-        <option value="en">English</option>
-        <option value="nl">Nederlands</option>
-        <option value="fr">Français</option>
-        <option value="de">Deutsch</option>
-    </select>
+        <a href="#why" data-i18n="why">Why this app?</a>
+        <a href="#how" data-i18n="how">How to use?</a>
+        <a href="#privacy" data-i18n="privacy">Privacy & Permissions.</a>
+        <a href="#contact" data-i18n="contact">Contact & Requests.</a></nav>
+    <select id="language-select" onchange="changeLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="nl">Nederlands</option>
+    <option value="fr">Français</option>
+    <option value="de">Deutsch</option>
+</select>
     <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
 </div>
 
 <header>
-    <a href="https://www.buymeacoffee.com/aspies.apps" target="_blank" class="donate-btn-top">Donate</a>
+    <a href="https://www.buymeacoffee.com/aspies.apps" target="_blank" class="donate-btn-top" data-i18n="donate">Donate</a>
     <img src="ic_launcher.png" alt="I'm OK Logo" class="logo">
     <h1>I'm OK</h1>
-    <p class="tagline">An autonomous safety net for you and your pets.</p>
+    <p class="tagline" data-i18n="tagline">An autonomous safety net for you and your pets.</p>
 </header>
 
-<div class="container">
+<main class="container">
     <section class="download-section">
         <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="play-button"></a>
     </section>
 
     <section class="content-section" id="why">
-        <h2>Why this app?</h2>
-        <h3>The Core Idea: Independence, Secured</h3>
+        <h2 data-i18n="whyThisApp">Why this app?</h2>
+        <h3 data-i18n="coreIdea">The Core Idea: Independence, Secured</h3>
 
-        <p>Living alone comes with a quiet, persistent worry: "What if something happened to me? How long would it be before someone knew?" For those who cherish their independence but acknowledge the reality of living solo, this question deserves a simple, reliable, and private answer.</p>
-        <p>I'm OK is your personal, automated safety net. It is an honest tool for peace of mind. It is not a tracker; it respects your privacy while discreetly watching over your well-being. It is designed for the independent spirit who wants to relieve their loved ones of worry, without sacrificing their autonomy.</p>
-        <p>Every day, at a time you choose, the app sends you a single, discreet notification. A simple tap on the "I'm OK" button is all it takes to confirm your well-being. If that confirmation doesn't happen, and only then, your personal, pre-defined emergency plan is set in motion.</p>
+        <p data-i18n="para1">Living alone comes with a quiet, persistent worry: "What if something happened to me? How long would it be before someone knew?" For those who cherish their independence but acknowledge the reality of living solo, this question deserves a simple, reliable, and private answer.</p>
+        <p data-i18n="para2">I'm OK is your personal, automated safety net. It is an honest tool for peace of mind. It is not a tracker; it respects your privacy while discreetly watching over your well-being. It is designed for the independent spirit who wants to relieve their loved ones of worry, without sacrificing their autonomy.</p>
+        <p data-i18n="para3">Every day, at a time you choose, the app sends you a single, discreet notification. A simple tap on the "I'm OK" button is all it takes to confirm your well-being. If that confirmation doesn't happen, and only then, your personal, pre-defined emergency plan is set in motion.</p>
         
-        <h3>A Personal Story: The Reason Why</h3>
+        <h3 data-i18n="personalStory">A Personal Story: The Reason Why</h3>
+
+        <p data-i18n="para4">"I developed this app from a personal need. As someone who lives alone and has limited social contact, my biggest concern wasn't for myself, but for my little dog, Mara. She is the reason I go outside, the reason this app exists: to ensure she would never be left alone.</p>
+        <p data-i18n="para5">I am one of those people you sometimes read about in the newspaper, found in their home months later. Whether I'm found in that state isn't my problem at that moment. But ensuring my dog is rescued, is. This app is the answer to that question. It is my way of giving back to her. She keeps me alive, and I am building a system that guarantees her safety.</p>
+        <p data-i18n="para6">It's a tool built to provide a safety net, not just for me, but for anyone in a similar situation. It's a way to ensure that in an emergency, help is on the way for those who depend on us, whether they have two legs or four."</p>
+    
+        <h3 data-i18n="howItWorks">How It Works: The Patient, Three-Stage System</h3>
         
-        <p>"I developed this app from a personal need. As someone who lives alone and has limited social contact, my biggest concern wasn't for myself, but for my little dog, Mara. She is the reason I go outside, the reason this app exists: to ensure she would never be left alone.</p>
-        <p>I am one of those people you sometimes read about in the newspaper, found in their home months later. Whether I'm found in that state isn't my problem at that moment. But ensuring my dog is rescued, is. This app is the answer to that question. It is my way of giving back to her. She keeps me alive, and I am building a system that guarantees her safety.</p>
-        <p>It’s a tool built to provide a safety net, not just for me, but for anyone in a similar situation. It's a way to ensure that in an emergency, help is on the way for those who depend on us, whether they have two legs or four."</p>
-        
-        <h3>How It Works: The Patient, Three-Stage System</h3>
-        
-        <p>The philosophy of I'm OK is reliability and the avoidance of false alarms. It is not built for speed, but for certainty.</p>
+        <p data-i18n="philosophy">The philosophy of I'm OK is reliability and the avoidance of false alarms. It is not built for speed, but for certainty.</p>
         <ul>
-            <li><strong>The Daily Check-in.</strong> You choose a fixed moment in your day – perhaps with your morning coffee. You receive a single notification. One tap on "I'm OK" is enough. The app then disappears back into the background.</li>
-            <li><strong>The Audible Reminder.</strong> Did you miss the first notification? Don't worry. The app knows that people forget their phones. After the first hour, it will only produce a discreet sound signal at intervals. No extra visual notifications to cause alarm. This is a built-in buffer, giving you hours to respond to a simple oversight.</li>
-            <li><strong>The Emergency Plan in Action.</strong> Only after a long period of unresponsiveness, a duration you control, does the emergency plan activate.</li>
+            <li data-i18n="dailyCheckin"><strong>The Daily Check-in.</strong> You choose a fixed moment in your day – perhaps with your morning coffee. You receive a single notification. One tap on "I'm OK" is enough. The app then disappears back into the background.</li>
+            <li data-i18n="audibleReminder"><strong>The Audible Reminder.</strong> Did you miss the first notification? Don't worry. The app knows that people forget their phones. After the first hour, it will only produce a discreet sound signal at intervals. No extra visual notifications to cause alarm. This is a built-in buffer, giving you hours to respond to a simple oversight.</li>
+            <li data-i18n="emergencyPlan"><strong>The Emergency Plan in Action.</strong> Only after a long period of unresponsiveness, a duration you control, does the emergency plan activate.</li>
         </ul>
         
-        <h3>For Family and Friends: Shared Peace of Mind</h3>
-        <p>Are you a son, daughter, or grandchild worried about a parent or grandparent who lives alone? "I'm OK" provides a non-intrusive way to ensure they are safe. It offers you a feeling of security without disturbing their cherished independence. By helping them set up the app, you will know that a reliable system is in place, watching over them when you can't.</p>
+        <h3 data-i18n="familyFriends">For Family and Friends: Shared Peace of Mind</h3>
+        <p data-i18n="para7">Are you a son, daughter, or grandchild worried about a parent or grandparent who lives alone? "I'm OK" provides a non-intrusive way to ensure they are safe. It offers you a feeling of security without disturbing their cherished independence. By helping them set up the app, you will know that a reliable system is in place, watching over them when you can't.</p>
 
         <!-- <div class="mission-box">
             <h2>2. A Personal Story: The Reason Why</h2>
@@ -204,18 +69,18 @@
     </section>
 
     <section class="content-section" id="how">
-        <h2>How to use?</h2>
+        <h2 data-i18n="howToUse">How to use?</h2>
 
-        <h3>How does the I'm OK app work?</h3>
-        <p>The I'm OK app is designed to ensure your safety by checking in with you daily at a set time. If you do not confirm in time, the app can automatically inform your contacts.</p>
-        
-        <h3>Setting up the daily check-in</h3>
-        
-        <p>Go to "Emergency Plan" to configure the app. Here you can set the following:</p>
+        <h3 data-i18n="howDoesWork">How does the I'm OK app work?</h3>
+        <p data-i18n="howDoesWorkText">The I'm OK app is designed to ensure your safety by checking in with you daily at a set time. If you do not confirm in time, the app can automatically inform your contacts.</p>
+
+        <h3 data-i18n="settingUpCheckin">Setting up the daily check-in</h3>
+
+        <p data-i18n="setupText">Go to "Emergency Plan" to configure the app. Here you can set the following:</p>
         <ul>
-            <li><strong>Check-in time:</strong> Choose the time you want to receive a daily notification to confirm you are okay.</li>
-            <li><strong>Your name:</strong> Enter your name. This name is used in the messages sent to your contacts.</li>
-            <li><strong>Emergency Plan:</strong> Create an emergency plan that will be included in the messages. Here you can provide instructions such as "first call my mobile, then come by, and then call emergency services".</li>
+            <li><strong data-i18n="checkinTime">Check-in time:</strong> <span data-i18n="checkinTimeText">Choose the time you want to receive a daily notification to confirm you are okay.</span></li>
+            <li><strong data-i18n="yourName">Your name:</strong> <span data-i18n="yourNameText">Enter your name. This name is used in the messages sent to your contacts.</span></li>
+            <li><strong data-i18n="emergencyPlanSetup">Emergency Plan:</strong> <span data-i18n="emergencyPlanSetupText">Create an emergency plan that will be included in the messages. Here you can provide instructions such as "first call my mobile, then come by, and then call emergency services".</span></li>
         </ul>
         
         <div class="screenshot-grid">
@@ -229,57 +94,58 @@
             <img src="8.jpg" alt="Icon & notification">
         </div>
 
-        <h3>Setting up Actions</h3>
-        <p>In the "Actions" section of the settings, you can define who should receive a message if you do not respond to the check-in. You can choose between SMS and email. Set the delay (in hours and minutes) after which the message should be sent. You can add multiple actions.</p>
-        
-        <h3>A Smart Approach to Setting Delays</h3>
-        <p>The purpose of this app is to alert someone in a true emergency, not to send worrying messages unnecessarily. It is crucial to set your delays thoughtfully to build in a safety buffer. Give yourself enough time to confirm your status, even if you've forgotten your phone at home or are otherwise delayed.</p>
-        
-        <p>Consider a layered approach to your emergency plan. For example:</p>
+        <h3 data-i18n="settingUpActions">Setting up Actions</h3>
+<p data-i18n="actionsText">In the "Actions" section of the settings, you can define who should receive a message if you do not respond to the check-in. You can choose between SMS and email. Set the delay (in hours and minutes) after which the message should be sent. You can add multiple actions.</p>
+
+<h3 data-i18n="smartApproach">A Smart Approach to Setting Delays</h3>
+<p data-i18n="smartApproachText">The purpose of this app is to alert someone in a true emergency, not to send worrying messages unnecessarily. It is crucial to set your delays thoughtfully to build in a safety buffer. Give yourself enough time to confirm your status, even if you've forgotten your phone at home or are otherwise delayed.</p>
+
+<p data-i18n="layeredApproach">Consider a layered approach to your emergency plan. For example:</p>
         <ul>
-            <li><strong>First delay (e.g., 12 hours after check-in):</strong> Notify a close neighbor for a quick wellness check.</li>
-            <li><strong>Second delay (e.g., 18 hours):</strong> Alert a family member who lives further away.</li>
-            <li><strong>Third delay (e.g., 24 hours):</strong> Contact emergency services as a final step.</li>
+            <li><strong data-i18n="firstDelay">First delay (e.g., 12 hours after check-in):</strong> <span data-i18n="firstDelayText">Notify a close neighbor for a quick wellness check.</span></li>
+            <li><strong data-i18n="secondDelay">Second delay (e.g., 18 hours):</strong> <span data-i18n="secondDelayText">Alert a family member who lives further away.</span></li>
+            <li><strong data-i18n="thirdDelay">Third delay (e.g., 24 hours):</strong> <span data-i18n="thirdDelayText">Contact emergency services as a final step.</span></li>
         </ul>
-        <h3>What happens if you miss a check-in?</h3>
-        <p>If you miss your daily check-in, the app's alert system is activated. The app will begin to play an audible reminder every hour and will continue to do so until you confirm that you are okay.</p>
-        <p>Crucially, no actions will be sent if you confirm your status before the delay of your first action has passed. The system is designed to give you ample time to respond and avoid false alarms.</p>
-        <p>If you do not confirm within the configured time, the app will proceed to execute your predefined actions. Your contacts will then receive the messages you have prepared, including your emergency plan.</p>
+        <h3 data-i18n="missedCheckin">What happens if you miss a check-in?</h3>
+        <p data-i18n="missedCheckinText">If you miss your daily check-in, the app's alert system is activated. The app will begin to play an audible reminder every hour and will continue to do so until you confirm that you are okay.</p>
+        <p data-i18n="crucially">Crucially, no actions will be sent if you confirm your status before the delay of your first action has passed. The system is designed to give you ample time to respond and avoid false alarms.</p>
+        <p data-i18n="confirmText">If you do not confirm within the configured time, the app will proceed to execute your predefined actions. Your contacts will then receive the messages you have prepared, including your emergency plan.</p>
         
     </section>
 
     <section class="content-section" id="privacy">
-        <h2>Privacy & Permissions:</h2>
-        <h3>Data Storage</h3>
-        <p>All data you enter in the I'm OK app is stored exclusively locally on your device. The app does not require an internet connection for its core functionalities and does not send your personal data anywhere. The stored data includes:</p>
+        <h2 data-i18n="privacyPermissions">Privacy & Permissions:</h2>
+        <h3 data-i18n="dataStorage">Data Storage</h3>
+        <p data-i18n="dataStorageText">All data you enter in the I'm OK app is stored exclusively locally on your device. The app does not require an internet connection for its core functionalities and does not send your personal data anywhere. The stored data includes:</p>
         <ul>
-            <li><strong>Settings:</strong> Your name, the check-in time, your emergency plan, and the configured actions (SMS/email) are stored locally.</li>
-            <li><strong>Status Information:</strong> The app locally tracks when the last successful check-in was and if any notifications have been missed.</li>
+            <li><strong data-i18n="settings">Settings:</strong> <span data-i18n="settingsText">Your name, the check-in time, your emergency plan, and the configured actions (SMS/email) are stored locally.</span></li>
+            <li><strong data-i18n="statusInfo">Status Information:</strong> <span data-i18n="statusInfoText">The app locally tracks when the last successful check-in was and if any notifications have been missed.</span></li>
         </ul>
-        <h3>Required Permissions</h3>
+        <h3 data-i18n="requiredPermissions">Required Permissions</h3>
 
         <ul>
-            <li><strong>Notifications (POST_NOTIFICATIONS):</strong> Necessary to send you the daily check-in reminder.</li>
-            <li><strong>Alarms and Reminders (SCHEDULE_EXACT_ALARM):</strong> Used to ensure the check-in notification is delivered at the exact set time, even if the device is inactive.</li>
-            <li><strong>Send SMS messages (SEND_SMS):</strong> Allows the app to send an SMS on your behalf to your contacts if you miss a check-in.</li>
-            <li><strong>Read contacts (READ_CONTACTS):</strong> Allows you to select a recipient for an action directly from your contact list. The app only reads the selected contact information and does not store it for other purposes.</li>
-            <li><strong>Foreground service (FOREGROUND_SERVICE):</strong> Ensures that the app can reliably perform actions (such as sending an SMS or email), even when the app is running in the background.</li>
+            <li><strong data-i18n="notifications">Notifications (POST_NOTIFICATIONS):</strong> <span data-i18n="notificationsText">Necessary to send you the daily check-in reminder.</span></li>
+            <li><strong data-i18n="alarms">Alarms and Reminders (SCHEDULE_EXACT_ALARM):</strong> <span data-i18n="alarmsText">Used to ensure the check-in notification is delivered at the exact set time, even if the device is inactive.</span></li>
+            <li><strong data-i18n="sms">Send SMS messages (SEND_SMS):</strong> <span data-i18n="smsText">Allows the app to send an SMS on your behalf to your contacts if you miss a check-in.</span></li>
+            <li><strong data-i18n="readContacts">Read contacts (READ_CONTACTS):</strong> <span data-i18n="readContactsText">Allows you to select a recipient for an action directly from your contact list. The app only reads the selected contact information and does not store it for other purposes.</span></li>
+            <li><strong data-i18n="foreground">Foreground service (FOREGROUND_SERVICE):</strong> <span data-i18n="foregroundText">Ensures that the app can reliably perform actions (such as sending an SMS or email), even when the app is running in the background.</span></li>
         </ul>
     </section>
 
-    <section class="content-section" id="contact">
-        <h3>Contact & Requests:</h3>
-        <div class="contact-info">
-            <p>Developed by: <strong>Aspie's Apps</strong></p>
-            <p>Questions or feedback? Email: <strong>aspies.apps@gmail.com</strong></p>
-        </div>
-    </section>
-</div>
+        <section class="content-section" id="contact">
+            <h3 data-i18n="contactRequests">Contact & Requests:</h3>
+            <div class="contact-info">
+                <p><strong data-i18n="developedBy">Developed by:</strong> <span data-i18n="aspiesApps">Aspie's Apps</span></p>
+                <p data-i18n="feedback">Questions or feedback?</p>
+                <p><strong>Email:</strong> <a href="mailto:aspies.apps@gmail.com" data-i18n="email">aspies.apps@gmail.com</a></p>
+            </div>
+        </section>
+</main>
 
 <button id="backToTop" onclick="scrollToTop()">↑ Top</button>
 
 <footer>
-    <p>&copy; 2026 imok.be | With care for people and their pets.</p>
+    <p data-i18n="footerText">&copy; 2026 imok.be | With care for people and their pets.</p>
 </footer>
 
 <script>
