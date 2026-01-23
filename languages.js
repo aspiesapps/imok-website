@@ -76,6 +76,7 @@ const translations = {
         whyThisApp: "Why this app?",
         howToUse: "How to use?",
         privacyPermissions: "Privacy & Permissions:",
+        withCare: "With care for people and their pets.",
     },
     nl: {
         why: "Waarom deze app?",
@@ -154,6 +155,7 @@ const translations = {
         whyThisApp: "Waarom deze app?",
         howToUse: "Hoe te gebruiken?",
         privacyPermissions: "Privacy & Permissies:",
+        withCare: "Met zorg voor mensen en hun huisdieren.",
     },
     fr: {
         why: "Pourquoi cette app?",
@@ -232,6 +234,7 @@ const translations = {
         whyThisApp: "Pourquoi cette application?",
         howToUse: "Comment utiliser?",
         privacyPermissions: "Confidentialité et permissions:",
+        withCare: "Avec soin pour les gens et leurs animaux de compagnie.",
     },
     de: {
         why: "Warum diese App?",
@@ -310,6 +313,7 @@ const translations = {
         whyThisApp: "Warum diese App?",
         howToUse: "Wie man es benutzt?",
         privacyPermissions: "Datenschutz & Berechtigungen:",
+        withCare: "Mit Sorgfalt für Menschen und ihre Haustiere.",
     }
 };
 

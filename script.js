@@ -65,9 +65,9 @@ function updatePageLanguage(lang) {
         }
     });
     
-    // Special handling for footer with HTML entity
-    const footerElement = document.getElementById('footerText');
-    if (footerElement) {
-        footerElement.innerHTML = trans['footerText'];
+    // Special handling for copyright symbol
+    const copyrightSymbol = document.getElementById('copyrightSymbol');
+    if (copyrightSymbol) {
+        copyrightSymbol.innerHTML = '&copy;';
     }
 }
