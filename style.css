@@ -75,14 +75,6 @@ header {
     position: absolute;
     top: 80px;
     right: 20px;
-    background: var(--bg-card);
-    color: var(--blue);
-    padding: 8px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border: 1px solid var(--blue);
 }
 
 .container { max-width: 850px; margin: 0 auto; padding: 20px; }
