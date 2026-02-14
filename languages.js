@@ -164,6 +164,8 @@ const translations = {
         preventPhoneText: "Zorgt ervoor dat de app acties op betrouwbare wijze kan uitvoeren (zoals het verzenden van een SMS of e-mail), zelfs wanneer het apparaat in de slaapstand staat.",
         runOnStartup: "Bij opstarten uitvoeren (RECEIVE_BOOT_COMPLETED):",
         runOnStartupText: "Stelt de app in staat automatisch te starten wanneer je apparaat wordt ingeschakeld.",
+        internet: "Internet (INTERNET):",
+        internetText: "Vereist voor het verzenden van e-mailalerts en voor het doen van vrijwillige donaties via de app.",
         contactRequests: "Contact & Verzoeken:",
         developedBy: "Ontwikkeld door:",
         aspiesApps: "Aspie's Apps",
