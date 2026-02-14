@@ -76,7 +76,7 @@ const translations = {
         runOnStartup: "Run on startup (RECEIVE_BOOT_COMPLETED):",
         runOnStartupText: "Allows the app to automatically reschedule your daily check-in after your device restarts.",
         internet: "Internet (INTERNET):",
-        internetText: "Required for sending email alerts and for making voluntary donations through te app.",
+        internetText: "Required for sending email alerts and for making voluntary donations through the app.",
         contactRequests: "Contact & Requests:",
         developedBy: "Developed by:",
         aspiesApps: "Aspie's Apps",
