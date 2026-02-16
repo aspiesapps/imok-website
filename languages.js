@@ -2,8 +2,8 @@ const translations = {
     en: {
         why: "Why this app?",
         how: "How to use?",
-        privacy: "Privacy & Permissions.",
-        contact: "Contact & Requests.",
+        privacy: "Permissions.",
+        contact: "Contact.",
         donate: "Donate",
         tagline: "An autonomous safety net for you and your pets.",
         downloadBtn: "Get it on Google Play",
@@ -91,8 +91,8 @@ const translations = {
     nl: {
         why: "Waarom deze app?",
         how: "Hoe te gebruiken?",
-        privacy: "Privacy & Toestemmingen.",
-        contact: "Contact & Verzoeken.",
+        privacy: "Toestemmingen.",
+        contact: "Contact.",
         donate: "Doneer",
         tagline: "Een autonoom veiligheidssysteem voor jou en je huisdieren.",
         downloadBtn: "Download het op Google Play",
@@ -180,8 +180,8 @@ const translations = {
     fr: {
         why: "Pourquoi cette app?",
         how: "Comment l'utiliser?",
-        privacy: "Confidentialité & Autorisations.",
-        contact: "Contact & Demandes.",
+        privacy: "Autorisations.",
+        contact: "Contact.",
         donate: "Donner",
         tagline: "Un filet de sécurité autonome pour vous et vos animaux de compagnie.",
         downloadBtn: "Télécharger sur Google Play",
@@ -270,8 +270,8 @@ const translations = {
     de: {
         why: "Warum diese App?",
         how: "Wie man es benutzt?",
-        privacy: "Datenschutz & Genehmigungen.",
-        contact: "Kontakt & Anfragen.",
+        privacy: "Genehmigungen.",
+        contact: "Kontakt.",
         donate: "Spenden",
         tagline: "Ein autonomes Sicherheitsnetz für Sie und Ihre Haustiere.",
         downloadBtn: "Im Google Play Store erhältlich",
