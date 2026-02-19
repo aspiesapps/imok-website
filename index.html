@@ -172,5 +172,25 @@
         document.documentElement.setAttribute('data-theme', savedTheme);
     };
 </script>
+<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #f1f1f1; border-top: 1px solid #ccc; padding: 15px; text-align: center; z-index: 1000; display: none;">
+    <p style="margin: 0; font-size: 14px; color: #333;">
+        Deze website maakt gebruik van noodzakelijke trackers (Fastly CDN & GitHub) om de site veilig te laden. 
+        Lees meer in ons <a href="privacy.html">Privacybeleid</a>.
+        <button onclick="acceptCookies()" style="margin-left: 15px; padding: 5px 15px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 3px;">Ik begrijp het</button>
+    </p>
+</div>
+
+<script>
+    function acceptCookies() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    window.onload = function() {
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    };
+</script>
 </body>
 </html>
