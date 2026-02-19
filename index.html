@@ -189,44 +189,77 @@
     </div>
 </div>
 
+<footer id="main-footer" style="background: #eee; padding: 20px; text-align: center; border-top: 1px solid #ccc;">
+    <p>&copy; 2026 imok.be</p>
+    <p id="footer-links">
+        </p>
+</footer>
+
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #222; color: white; padding: 20px; text-align: center; z-index: 9999; display: none; box-sizing: border-box; font-size: 14px; font-family: sans-serif;">
+    <div id="banner-text"></div>
+    <div style="margin-top: 10px;">
+        <button id="cookie-button" onclick="acceptCookies()" style="padding: 8px 25px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 4px; font-weight: bold;">
+            OK
+        </button>
+    </div>
+</div>
+
 <script>
     const translations = {
         en: {
-            text: 'This website uses essential cookies (GitHub & Fastly) to function securely. ',
-            link: 'Read more',
-            button: 'OK'
+            bannerText: 'This website uses essential cookies (GitHub & Fastly) to function securely. ',
+            bannerLink: 'Read more',
+            button: 'OK',
+            privacy: 'Privacy Policy',
+            cookies: 'Cookie Policy',
+            terms: 'Terms & Conditions'
         },
         nl: {
-            text: 'Deze website gebruikt essentiële cookies (GitHub & Fastly) voor een veilige werking. ',
-            link: 'Lees meer',
-            button: 'OK'
+            bannerText: 'Deze website gebruikt essentiële cookies (GitHub & Fastly) voor een veilige werking. ',
+            bannerLink: 'Lees meer',
+            button: 'OK',
+            privacy: 'Privacybeleid',
+            cookies: 'Cookiebeleid',
+            terms: 'Algemene Voorwaarden'
         },
         fr: {
-            text: 'Ce site utilise des cookies essentiels (GitHub & Fastly) pour fonctionner en toute sécurité. ',
-            link: 'Lire plus',
-            button: 'D\'accord'
+            bannerText: 'Ce site utilise des cookies essentiels (GitHub & Fastly) pour fonctionner en toute sécurité. ',
+            bannerLink: 'Lire plus',
+            button: 'D\'accord',
+            privacy: 'Politique de confidentialité',
+            cookies: 'Politique de cookies',
+            terms: 'Conditions Générales'
         },
         de: {
-            text: 'Diese Website verwendet essenzielle Cookies (GitHub & Fastly), um sicher zu funktionieren. ',
-            link: 'Mehr lesen',
-            button: 'OK'
+            bannerText: 'Diese Website verwendet essenzielle Cookies (GitHub & Fastly), um sicher zu funktionieren. ',
+            bannerLink: 'Mehr lesen',
+            button: 'OK',
+            privacy: 'Datenschutzerklärung',
+            cookies: 'Cookie-Richtlinie',
+            terms: 'Allgemeine Geschäftsbedingungen'
         }
     };
 
-    function updateBannerLanguage() {
-        // We kijken eerst naar de <html lang="..."> tag, anders naar de browser taal
+    function updateLanguage() {
+        // Detecteer taal via <html lang="..."> of browserinstelling
         let lang = document.documentElement.lang || navigator.language.slice(0, 2);
-        
-        // Als de taal niet in onze lijst staat, vallen we terug op Engels
         if (!translations[lang]) lang = 'en';
 
         const data = translations[lang];
+
+        // 1. Update de Cookie Banner
         const bannerTextDiv = document.getElementById('banner-text');
         const cookieButton = document.getElementById('cookie-button');
-
-        // Bouw de inhoud op met de juiste link naar de Engelse bestandsnaam
-        bannerTextDiv.innerHTML = data.text + '<a href="cookie-policy.html" style="color: #add8e6;">' + data.link + '</a>';
+        bannerTextDiv.innerHTML = data.bannerText + '<a href="cookie-policy.html" style="color: #add8e6;">' + data.bannerLink + '</a>';
         cookieButton.textContent = data.button;
+
+        // 2. Update de Footer Links
+        const footerLinks = document.getElementById('footer-links');
+        footerLinks.innerHTML = `
+            <a href="privacy-policy.html" style="margin: 0 10px; color: #555; text-decoration: none;">${data.privacy}</a> | 
+            <a href="cookie-policy.html" style="margin: 0 10px; color: #555; text-decoration: none;">${data.cookies}</a> | 
+            <a href="terms-and-conditions.html" style="margin: 0 10px; color: #555; text-decoration: none;">${data.terms}</a>
+        `;
     }
 
     function acceptCookies() {
@@ -235,18 +268,11 @@
     }
 
     window.onload = function() {
-        updateBannerLanguage();
+        updateLanguage();
         if (!localStorage.getItem('cookiesAccepted')) {
             document.getElementById('cookie-banner').style.display = 'block';
         }
     };
 </script>
-<footer>
-    <p>
-        <a href="privacy-policy.html">Privacy Policy</a> | 
-        <a href="cookie-policy.html">Cookie Policy</a> | 
-        <a href="terms-and-conditions.html">Terms & Conditions</a>
-    </p>
-</footer>
 </body>
 </html>
