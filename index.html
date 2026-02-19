@@ -179,19 +179,63 @@
         <button onclick="acceptCookies()" style="margin-left: 15px; padding: 5px 15px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 3px;">Ik begrijp het</button>
     </p>
 </div>
-<footer>
-    <p>
-        <a href="privacy-policy.html">Privacy Policy</a> | 
-        <a href="cookie-policy.html">Cookie Policy</a> | 
-        <a href="terms-and-conditions.html">Terms & Conditions</a>
-    </p>
-</footer><script>
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #222; color: white; padding: 20px; text-align: center; z-index: 9999; display: none; box-sizing: border-box; font-size: 14px;">
+    <div id="banner-text">
+        </div>
+    <div style="margin-top: 10px;">
+        <button id="cookie-button" onclick="acceptCookies()" style="padding: 8px 25px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 4px; font-weight: bold;">
+            OK
+        </button>
+    </div>
+</div>
+
+<script>
+    const translations = {
+        en: {
+            text: 'This website uses essential cookies (GitHub & Fastly) to function securely. ',
+            link: 'Read more',
+            button: 'OK'
+        },
+        nl: {
+            text: 'Deze website gebruikt essentiële cookies (GitHub & Fastly) voor een veilige werking. ',
+            link: 'Lees meer',
+            button: 'OK'
+        },
+        fr: {
+            text: 'Ce site utilise des cookies essentiels (GitHub & Fastly) pour fonctionner en toute sécurité. ',
+            link: 'Lire plus',
+            button: 'D\'accord'
+        },
+        de: {
+            text: 'Diese Website verwendet essenzielle Cookies (GitHub & Fastly), um sicher zu funktionieren. ',
+            link: 'Mehr lesen',
+            button: 'OK'
+        }
+    };
+
+    function updateBannerLanguage() {
+        // We kijken eerst naar de <html lang="..."> tag, anders naar de browser taal
+        let lang = document.documentElement.lang || navigator.language.slice(0, 2);
+        
+        // Als de taal niet in onze lijst staat, vallen we terug op Engels
+        if (!translations[lang]) lang = 'en';
+
+        const data = translations[lang];
+        const bannerTextDiv = document.getElementById('banner-text');
+        const cookieButton = document.getElementById('cookie-button');
+
+        // Bouw de inhoud op met de juiste link naar de Engelse bestandsnaam
+        bannerTextDiv.innerHTML = data.text + '<a href="cookie-policy.html" style="color: #add8e6;">' + data.link + '</a>';
+        cookieButton.textContent = data.button;
+    }
+
     function acceptCookies() {
         localStorage.setItem('cookiesAccepted', 'true');
         document.getElementById('cookie-banner').style.display = 'none';
     }
 
     window.onload = function() {
+        updateBannerLanguage();
         if (!localStorage.getItem('cookiesAccepted')) {
             document.getElementById('cookie-banner').style.display = 'block';
         }
