@@ -140,7 +140,7 @@ const translations = {
         secondDelayText: "Waarschuw een familielid dat verder weg woont.",
         thirdDelay: "Derde wachttijd (bv. 8 uur):",
         thirdDelayText: "Neem contact op met de hulpdiensten als laatste stap.",
-        missedCheckin: "Wat gebeurt er als je een inchecken mist?",
+        missedCheckin: "Wat gebeurt er als je een check-in mist?",
         missedCheckinText: "Als je een check-in mist, wordt het waarschuwingssysteem van de app geactiveerd. De app begint elk half uur een hoorbare herinnering af te spelen en blijft dit doen totdat je bevestigt dat je in orde bent.",
         crucially: "Cruciaal is dat er geen alerts worden verzonden als je je status bevestigt voordat de wachttijd van je eerste alert is verstreken. Het systeem is ontworpen om je voldoende tijd te geven om te reageren en valse alarmen te voorkomen.",
         confirmText: "Als je niet binnen de geconfigureerde tijd bevestigt, zal de app doorgaan met het uitvoeren van je vooraf gedefinieerde alerts. Je contacten ontvangen dan de berichten die je hebt voorbereid, inclusief je noodplan.",
